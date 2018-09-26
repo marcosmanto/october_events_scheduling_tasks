@@ -1,0 +1,8 @@
+.DS_STORE
+.vagrant
+public/vendor
+public/bootstrap
+public/modules
+public/plugins/rainlab
+public/storage
+public/themes/demo/assets
