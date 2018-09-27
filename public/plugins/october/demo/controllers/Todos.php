@@ -1,6 +1,9 @@
 <?php namespace October\Demo\Controllers;
 
 class Todos extends \Backend\Classes\Controller {
+  // public $layout = 'todo-layout';
+  // public $bodyClass = 'todo-container';
+  
   public function index(){
     $this->vars['testVar'] = $this;
     $this->vars['action'] = $this->action;

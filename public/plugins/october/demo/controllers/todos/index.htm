@@ -13,5 +13,11 @@
 <div class="result">
 
 </div>
-
-<?= $this->makeHintPartial('my_hint_key', 'hint', ['foo' => 'bar']) ?>
+<hr>  
+<?= $this->makeHintPartial('b-key', 'hint',
+                              [ 'foo' => 'bar',
+                                'type' => 'info',
+                                'title' => 'Wait',
+                                'subtitle' => 'See these lines',
+                                'icon' => 'oc-icon-eye-slash'
+                                ]) ?>

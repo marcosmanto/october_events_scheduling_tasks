@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html lang="<?= App::getLocale() ?>" class="no-js <?= $this->makeLayoutPartial('browser_detector') ?>">
+    <head>
+        <?= $this->makeLayoutPartial('head') ?>
+    </head>
+    <body class="<?= $this->bodyClass ?>">
+      <?= Block::placeholder('body') ?>
+    </body>
+</html>
