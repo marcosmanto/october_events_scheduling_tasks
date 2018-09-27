@@ -11,6 +11,7 @@ redirect = "account"
 use Marcosmantovani\Movies\Models\Movie;
 function onTest()
 {
+    trace_log("Calculating...");
     $value1 = input('value1');
     $value2 = input('value2');
     $operation = input('operation');
@@ -31,7 +32,7 @@ function onTest()
     }
     $m = Movie::find(8);
     //echo Movie::find(8)->name;
-    eval(\Psy\sh());
+    //eval(\Psy\sh());
 }
 ?>
 ==

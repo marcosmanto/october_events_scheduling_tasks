@@ -41,5 +41,7 @@ class Todo extends ComponentBase
         }
 
         $this->page['items'] = $items;
+
+        $this->fireEvent('todo.itemAdded', [$items]);
     }
 }

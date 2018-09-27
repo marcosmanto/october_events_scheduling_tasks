@@ -5,6 +5,15 @@ layout = "default"
 [demoTodo]
 max = 3
 ==
+
+function onInit()
+{
+  $this['demoTodo']->bindEvent('todo.itemAdded',function($items){
+    trace_log('Um item foi adicionado. Total de items: ' . count($items));
+  });
+}
+
+==
 <div class="jumbotron title-js">
     <div class="container">
         <div class="row">

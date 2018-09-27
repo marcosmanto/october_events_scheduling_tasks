@@ -68,5 +68,49 @@ class Plugin extends PluginBase
           });
         });
 
+
+       // Extend all backend form usage
+       \Event::listen('backend.form.extendFields', function($widget) {
+
+        // Only for the User controller
+        if (!$widget->getController() instanceof \RainLab\User\Controllers\Users) {
+            return;
+        }
+
+        // Only for the User model
+        if (!$widget->model instanceof \RainLab\User\Models\User) {
+            return;
+        }
+
+        // Add an extra birthday field
+        $widget->addFields([
+            'birthday' => [
+                'label'   => 'Birthday',
+                'comment' => 'Select the users birthday',
+                'type'    => 'datepicker'
+            ]
+        ]);
+
+        // Remove a Surname field
+        $widget->removeField('surname');
+      }); 
+
+      \Event::listen('backend.menu.extendItems', function($manager) {
+
+        $manager->addMainMenuItems('October.Cms', [
+            'cms' => [
+                // 'label' => '...'
+            ]
+        ]);
+
+        $manager->addSideMenuItems('October.Cms', 'cms', [
+            'pages' => [
+                // 'label' => '...'
+            ]
+        ]);
+
+      });
+
+        
     }
 }
