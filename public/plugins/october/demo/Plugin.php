@@ -5,6 +5,7 @@
  */
 
 use System\Classes\PluginBase;
+use MarcosMantovani\Movies\Models\Movie;
 
 class Plugin extends PluginBase
 {
@@ -41,5 +42,31 @@ class Plugin extends PluginBase
         \Event::listen('marcosmantovani.movies.afterCreate', function ($movie) {
             \Log::info('O Filme "' . $movie->name . '" foi criado');
         });
+
+        // Movie::extend(function($model){
+        //   $model->bindEvent('model.getAttribute',function($attribute, $value){
+            
+        //     if($attribute == 'name'){
+        //       return 'bar';
+        //     }
+        //   });
+        // });
+
+        Movie::extend(function($model){
+          $model->bindEvent('model.afterFetch',function() use ($model){
+            if($model->id !=8){
+              return;
+            }
+            
+            $model->bindEvent('model.getAttribute',function($attribute, $value){
+              
+              if($attribute == 'name'){
+                return 'bar';
+              }
+            });
+
+          });
+        });
+
     }
 }

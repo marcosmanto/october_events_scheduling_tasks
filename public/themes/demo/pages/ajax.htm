@@ -8,6 +8,7 @@ security = "user"
 redirect = "account"
 ==
 <?php
+use Marcosmantovani\Movies\Models\Movie;
 function onTest()
 {
     $value1 = input('value1');
@@ -28,6 +29,9 @@ function onTest()
             $this['result'] = $value1 / $value2;
             break;
     }
+    $m = Movie::find(8);
+    //echo Movie::find(8)->name;
+    eval(\Psy\sh());
 }
 ?>
 ==
