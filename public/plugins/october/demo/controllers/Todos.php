@@ -3,6 +3,7 @@
 class Todos extends \Backend\Classes\Controller {
   // public $layout = 'todo-layout';
   // public $bodyClass = 'todo-container';
+  public $bodyClass = 'compact-container';
   
   public function index(){
     $this->vars['testVar'] = $this;
