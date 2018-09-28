@@ -1,0 +1,22 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+    title:
+        label: TITLE
+        searchable: true
+    description:
+        label: DESCRIPTION
+        searchable: true    
+    created_at:
+        label: CREATED AT
+        type: date       
+        invisible: true  
+    updated_at:
+        label: CREATED AT
+        type: date       
+        invisible: true              
+
